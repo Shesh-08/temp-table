@@ -11,14 +11,14 @@ Gem::Specification.new do |spec|
 
   spec.summary = "To create temproray table."
   spec.description = "You can create the temproray table using this gem so that you can make a temp table and store its data temproraly until the user's session is active."
-  spec.homepage = "https://github.com/Shesh-08"
+  spec.homepage = "https://github.com/Shesh-08/temp-table"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "https://github.com"
+  spec.metadata["allowed_push_host"] = "https://github.com/Shesh-08/temp-table"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "http://github.com/temp_table"
-  # spec.metadata["changelog_uri"] = Dir["lib/**/*", "README.md"]
+  spec.metadata["source_code_uri"] = "https://github.com/Shesh-08/temp-table"
+  spec.metadata["changelog_uri"] = "https://github.com/Shesh-08/temp-table/blob/master/README.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
