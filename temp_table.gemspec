@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.email = ["sheshwork08@gmail.com"]
   spec.license = "MIT"
 
-  spec.summary = "To create temproray table."
-  spec.description = "You can create the temproray table using this gem so that you can make a temp table and store its data temproraly until the user's session is active."
+  spec.summary = "To create temporary table."
+  spec.description = "You can create the temporary table using this gem so that you can make a temp table and store its data temproraly until the user's session is active."
   spec.homepage = "https://github.com/Shesh-08/temp-table"
   spec.required_ruby_version = ">= 2.6.0"
 

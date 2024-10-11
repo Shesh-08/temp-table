@@ -1,8 +1,8 @@
 # TempTable
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/temp_table`. To experiment with that code, run `bin/console` for an interactive prompt.
+You can create the temporary table using this gem so that you can make a temp table and store its data temproraly until the user's session is active.
 
-TODO: Delete this and the text above, and describe your gem
+To create temporary table.
 
 ## Installation
 
@@ -21,8 +21,32 @@ Or install it yourself as:
     $ gem install temp_table
 
 ## Usage
+    # To create copy of existing table Example:
+    require "temp_table"
+    TempTable.copy("original_table_name", "temp_table_name")
 
-TODO: Write usage instructions here
+    # To create copy of existing table with extra columns Example:
+    TempTable.copy("original_table_name", "temp_table_name", [{ name: "temp_table_id", data_type: "integer" }])
+
+    # To insert row from original table to temp table Example:
+    TempTable.insert_row_from_original("original_table_name", original_table_id, "temp_table_name")
+
+    # To insert data to reference table Example:
+    TempTable.insert_row_from_reference("temp_reference_id", reference_id, data, "original_table_name", "temp_table_name")
+
+    # To create table Example:
+    columns = { id: "integer", name: "varchar", phone: "bigint", email: "string" }
+    TempTable.create("temp_table_name", columns)
+
+    # To fetch data from temporary table
+        # with condition
+        conditions = {
+            age: 25,
+            status: 'active'
+        }
+        TempTable.fetch("temp_table_name", conditions)
+        # without condition
+        TempTable.fetch("temp_table_name") # to fetch all data of the table
 
 ## Development
 
@@ -32,4 +56,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/temp_table.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Shesh-08/temp_table.
