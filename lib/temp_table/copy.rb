@@ -43,11 +43,11 @@ module TempTable
         #{column_definitions_string};
       SQL
 
-      Rails.logger.info("Executing SQL: #{sql}")
+      $logger.info("Executing SQL: #{sql}")
 
       ActiveRecord::Base.connection.execute(sql)
     rescue ActiveRecord::StatementInvalid => e
-      Rails.logger.info("SQL Error: #{e.message}")
+      $logger.info("SQL Error: #{e.message}")
     end
 
     def add_foreign_key
@@ -60,7 +60,7 @@ module TempTable
           FOREIGN KEY (original_id) REFERENCES #{original_table_name}(id);
         SQL
       else
-        Rails.logger.info("Cannot add foreign key: #{original_table_name} is not a temporary table.")
+        $logger.info("Cannot add foreign key: #{original_table_name} is not a temporary table.")
       end
     end
 

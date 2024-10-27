@@ -9,3 +9,7 @@
 /vendor
 /log
 /*.gem
+.byebug_history
+.rspec
+/*db
+/db

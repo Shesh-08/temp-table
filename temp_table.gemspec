@@ -9,30 +9,33 @@ Gem::Specification.new do |spec|
   spec.email = ["sheshwork08@gmail.com"]
   spec.license = "MIT"
 
-  spec.summary = "To create temporary table."
-  spec.description = "You can create the temporary table using this gem so that you can make a temp table and store its data temproraly until the user's session is active."
+  spec.summary = "To create temporary tables."
+  spec.description = "You can create temporary tables using this gem to store data temporarily until the user's session is active."
   spec.homepage = "https://github.com/Shesh-08/temp-table"
   spec.required_ruby_version = ">= 2.6.0"
 
-  spec.metadata["allowed_push_host"] = "https://github.com/Shesh-08/temp-table"
+  # Change allowed_push_host to point to RubyGems
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/Shesh-08/temp-table"
-  spec.metadata["changelog_uri"] = "https://github.com/Shesh-08/temp-table/blob/master/README.md"
+  spec.metadata["source_code_uri"] = spec.homepage # This can also point to your GitHub repo
+  spec.metadata["changelog_uri"] = "https://github.com/Shesh-08/temp-table/blob/master/CHANGELOG.md" # Adjust if you have a changelog
 
   # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject do |f|
       (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
     end
   end
+
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'activerecord'
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
