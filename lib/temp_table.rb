@@ -1,13 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "temp_table/version"
 require_relative "temp_table/config/initializers/database"
-require_relative "temp_table/copy"
-require_relative "temp_table/create"
-require_relative "temp_table/fetch"
-require_relative "temp_table/insert_row_from_original"
-require_relative "temp_table/insert_row_from_reference"
-require_relative "temp_table/insert"
+Dir[File.join(__dir__, 'temp_table', '*.rb')].each do |file|
+  require_relative file
+end
+
 require "logger"
 
 module TempTable

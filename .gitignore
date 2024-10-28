@@ -13,3 +13,5 @@
 .rspec
 /*db
 /db
+.ruby-version
+.ruby-gemset
